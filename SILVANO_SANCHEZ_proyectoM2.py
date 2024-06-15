@@ -86,7 +86,8 @@ class LongitudFraseApp(QMainWindow):
 
     # En este método validar_longitud, se obtiene la frase ingresada por el usuario,
     # se agrega a la lista frases_ingresadas, se calcula su longitud y se muestra el
-    # resultado correspondiente en la etiqueta self.resultado
+    # resultado correspondiente en la etiqueta self.resultado.
+    # Solo se ejecutará cuando el usuario ingrese una frase válida Sin números.
     def validar_longitud(self):
         # Obtener la frase ingresada por el usuario
         frase = self.lineEdit.text()
