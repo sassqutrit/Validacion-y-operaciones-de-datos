@@ -12,24 +12,22 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
    * Basándose en los valores de XX y YY, el programa determina y muestra en cuál de los cuatro cuadrantes se encuentra el punto.
 
 ### Explicación del desarrollo del Programa 1. Longitud de una Frase.
-
-   A. Uso correcto de las estructuras de control:
+   * Uso correcto de las estructuras de control:
       - Se utiliza la estructura de control `if-elif-else` para validar la longitud de la frase y mostrar el mensaje correspondiente.
-   B. Uso correcto de variables y colecciones de datos:
+   * Uso correcto de variables y colecciones de datos:
       - Se utiliza la variable `frase` para almacenar la cadena de texto ingresada por el usuario.
       - Se utiliza la función `len()` para obtener la longitud de la cadena de texto almacenada en `frase`.
-   C. Entrega del programa según las indicaciones:
+   * Entrega del programa según las indicaciones:
       - Este código cubre el primer programa solicitado: "Longitud de una frase".
-   D. Uso correcto de la sintaxis y características de Python:
+   * Uso correcto de la sintaxis y características de Python:
       - Se utiliza la indentación adecuada según las buenas prácticas de Python.
       - Se utiliza el casting implícito al comparar la longitud de la cadena con números enteros.
-   E. Comentarios dentro del archivo explicando el funcionamiento:
+   * Comentarios dentro del archivo explicando el funcionamiento:
       - Se han agregado comentarios en el código explicando el propósito de cada bloque de código.
 Con estos pasos, el programa cumple con los criterios de evaluación mencionados.
 
 ### Explicación del desarrollo del Programa 2. Encuentra el Cuadrante.
-
-   A. Uso correcto de las estructuras de control:
+   * Uso correcto de las estructuras de control:
       - Se utiliza
 
 
