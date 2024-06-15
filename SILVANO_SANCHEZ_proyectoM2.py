@@ -21,8 +21,8 @@ __changed__     =   '2024-06-15 12:00:00'
 
 """
 Programa 1. Longitud de Frase.
-Programa que valida la longitud de una frase ingresada por el usuario.
-La frase correcta debe tener entre 4 y 8 caracteres.
+- Programa que valida la longitud de una frase ingresada por el usuario.
+- La frase correcta debe tener entre 4 y 8 caracteres.
 
 Criterios de evaluación:
 A. Uso correcto de las estructuras de control.
@@ -121,26 +121,101 @@ if __name__ == "__main__":
     sys.exit(app.exec())
 
 
+
 """
-# Programa 2. Encuentra el cuadrante.
-# Programa para encontrar el cuadrante de un punto en el plano cartesiano.
-
-# Solicita al usuario que ingrese las coordenadas X e Y
-x = float(input("Ingrese X: "))
-y = float(input("Ingrese Y: "))
-
-# Verifica que ninguna de las coordenadas sea 0 y determina el cuadrante
-if x == 0 or y == 0:
-    print("Las coordenadas no pueden ser 0")
-elif x > 0 and y > 0:
-    print("El punto se encuentra en el cuadrante I")
-elif x < 0 and y > 0:
-    print("El punto se encuentra en el cuadrante II")
-elif x < 0 and y < 0:
-    print("El punto se encuentra en el cuadrante III")
-elif x > 0 and y < 0:
-    print("El punto se encuentra en el cuadrante IV")
+Programa 2. Encuentra el cuadrante.
+- Programa para encontrar el cuadrante de un punto en el plano cartesiano.
+- Programa que identifica el cuadrante en el que se encuentra un punto dado por sus coordenadas (X, Y).
+- El programa verifica que ninguna coordenada sea 0.
+- Se utiliza PyQt6 para la interfaz gráfica y matplotlib para visualizar el punto en el plano cartesiano.
 
 """
 
+import sys
+from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
+import matplotlib
+matplotlib.use('QT5Agg')
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+import matplotlib.pyplot as plt
+
+class CuadranteApp(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+
+    def initUI(self):
+        # Configuración de la ventana principal
+        self.setWindowTitle("Encuentra el Cuadrante")
+        self.setGeometry(500, 100, 600, 600)
+
+        # Creación de los widgets
+        layout = QVBoxLayout()
+        self.label_x = QLabel("Ingrese la coordenada X (distinta de 0):")
+        layout.addWidget(self.label_x)
+        self.lineEdit_x = QLineEdit()
+        layout.addWidget(self.lineEdit_x)
+        self.label_y = QLabel("Ingrese la coordenada Y (distinta de 0):")
+        layout.addWidget(self.label_y)
+        self.lineEdit_y = QLineEdit()
+        layout.addWidget(self.lineEdit_y)
+        self.button = QPushButton("Encontrar Cuadrante")
+        self.button.clicked.connect(self.encontrar_cuadrante)
+        layout.addWidget(self.button)
+        self.resultado = QLabel("")
+        layout.addWidget(self.resultado)
+
+        # Creación del lienzo para graficar el punto
+        self.figure = plt.figure()
+        self.canvas = FigureCanvas(self.figure)
+        layout.addWidget(self.canvas)
+
+        # Organización de los widgets en un layout
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
+    def encontrar_cuadrante(self):
+        # Obtener las coordenadas ingresadas por el usuario
+        x = float(self.lineEdit_x.text())
+        y = float(self.lineEdit_y.text())
+
+        # Verificar que ninguna coordenada sea 0
+        if x == 0 or y == 0:
+            self.resultado.setText("Las coordenadas no pueden ser 0.")
+            return
+
+        # Identificar el cuadrante
+        if x > 0 and y > 0:
+            cuadrante = "I"
+        elif x < 0 and y > 0:
+            cuadrante = "II"
+        elif x < 0 and y < 0:
+            cuadrante = "III"
+        else:
+            cuadrante = "IV"
+
+        # Mostrar el resultado
+        self.resultado.setText(f"El punto ({x}, {y}) se encuentra en el cuadrante {cuadrante}.")
+
+        # Graficar el punto en el plano cartesiano
+        self.figure.clear()
+        ax = self.figure.add_subplot(111)
+        ax.axhline(y=0, color='k')  # Eje X
+        ax.axvline(x=0, color='k')  # Eje Y
+        ax.set_xlim([-100, 100])
+        ax.set_ylim([-100, 100])
+        ax.scatter(x, y, color='r', marker='o')
+        ax.set_title(f"Punto ({x}, {y}) en el cuadrante {cuadrante}")
+        self.canvas.draw()
+
+if __name__ == "__main__":
+    # Creación de la aplicación Qt
+    app = QApplication(sys.argv)
+
+    # Creación de la ventana principal
+    window = CuadranteApp()
+    window.show()
+
+    # Ejecución del loop de eventos de la aplicación
+    sys.exit(app.exec())
 
