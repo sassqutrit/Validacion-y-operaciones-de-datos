@@ -122,6 +122,8 @@ if __name__ == "__main__":
 
 
 
+# TODO NOTA: PARA EJECUTAR ESTE PROGRAMA 2, SE DEBE COMENTAR EL ANTERIOR (TODO DE ARRIBA) O
+#   EJECUTARLO DIRECTAMENTE CON EL OTRO SCRIPT/ARCHIVO QUE SE CREO EN EL REPO.
 """
 Programa 2. Encuentra el cuadrante.
 - Programa para encontrar el cuadrante de un punto en el plano cartesiano.
@@ -131,6 +133,7 @@ Programa 2. Encuentra el cuadrante.
 
 """
 
+"""
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 import matplotlib
@@ -138,11 +141,16 @@ matplotlib.use('QT5Agg')
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import matplotlib.pyplot as plt
 
+
+# Creación o definición de una clase, que hereda de la clase principal QMainWindow
+# Se utilizan esta clase y funciones para desarrollar una GUI.
 class CuadranteApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
 
+    # Cuando se crea una instancia de la clase LongitudFraseApp, se llama al método:
+    # __init__, que es el método constructor de la clase.
     def initUI(self):
         # Configuración de la ventana principal
         self.setWindowTitle("Encuentra el Cuadrante")
@@ -174,6 +182,11 @@ class CuadranteApp(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
+    # En el método `encontrar_cuadrante`, se obtienen las coordenadas ingresadas por el usuario,
+    # verifiqué que ninguna coordenada fuera 0 (utilizando una estructura condicional `if`),
+    # identifiqué el cuadrante en el que se encuentra el punto según las reglas dadas
+    # (utilizando una estructura condicional `if-elif-else`), y mostré el resultado en la
+    # etiqueta `self.resultado`.
     def encontrar_cuadrante(self):
         # Obtener las coordenadas ingresadas por el usuario
         x = float(self.lineEdit_x.text())
@@ -208,6 +221,8 @@ class CuadranteApp(QMainWindow):
         ax.set_title(f"Punto ({x}, {y}) en el cuadrante {cuadrante}")
         self.canvas.draw()
 
+# Cuando el intérprete ejecuta un módulo, la variable __name__ se establecerá como __main__
+# si el módulo que se está ejecutando es el programa principal.
 if __name__ == "__main__":
     # Creación de la aplicación Qt
     app = QApplication(sys.argv)
@@ -218,4 +233,4 @@ if __name__ == "__main__":
 
     # Ejecución del loop de eventos de la aplicación
     sys.exit(app.exec())
-
+"""
