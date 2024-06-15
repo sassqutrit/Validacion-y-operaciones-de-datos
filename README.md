@@ -7,9 +7,9 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
    * Si la palabra tiene entre 4 y 8 caracteres, debe informar que la palabra es correcta.
 
 ## Programa 2. Encuentra el Cuadrante:
-   * El programa solicita dos números al usuario que representan las coordenadas XX y YY de un punto en un plano cartesiano.
+   * El programa solicita dos números al usuario que representan las coordenadas X e Y de un punto en un plano cartesiano.
    * Verifica que ninguna de las coordenadas sea 0.
-   * Basándose en los valores de XX y YY, el programa determina y muestra en cuál de los cuatro cuadrantes se encuentra el punto.
+   * Basándose en los valores de X e Y, el programa determina y muestra en cuál de los cuatro cuadrantes se encuentra el punto.
 
 ### Explicación del desarrollo del Programa 1. Longitud de una Frase.
    * Uso correcto de las estructuras de control:
