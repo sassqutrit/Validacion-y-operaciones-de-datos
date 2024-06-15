@@ -11,7 +11,8 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
    * Verifica que ninguna de las coordenadas sea 0.
    * Basándose en los valores de XX y YY, el programa determina y muestra en cuál de los cuatro cuadrantes se encuentra el punto.
 
-1. Explicación del desarrollo del Programa 1. Longitud de una Frase.
+### Explicación del desarrollo del Programa 1. Longitud de una Frase.
+
    A. Uso correcto de las estructuras de control:
       - Se utiliza la estructura de control `if-elif-else` para validar la longitud de la frase y mostrar el mensaje correspondiente.
    B. Uso correcto de variables y colecciones de datos:
@@ -26,7 +27,8 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
       - Se han agregado comentarios en el código explicando el propósito de cada bloque de código.
 Con estos pasos, el programa cumple con los criterios de evaluación mencionados.
 
-2. Explicación del desarrollo del Programa 2. Encuentra el Cuadrante.
+### Explicación del desarrollo del Programa 2. Encuentra el Cuadrante.
+
    A. Uso correcto de las estructuras de control:
       - Se utiliza
 
