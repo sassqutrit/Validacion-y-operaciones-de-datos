@@ -33,7 +33,8 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
   - `self.initUI()`: Se llama al método `initUI`, que se encarga de configurar y crear la interfaz de usuario de la aplicación.
   - `self.frases_ingresadas = []`: Se crea una lista vacía llamada `frases_ingresadas`, que se utilizará para almacenar las frases ingresadas por el usuario durante la ejecución del programa.
 * Luego, en el método `initUI`, se configura la ventana principal, se crean los widgets (etiquetas, campo de entrada de texto y botón) y se organizan en un layout vertical utilizando la clase `QVBoxLayout`.
-* Finalmente, en el método `validar_longitud`, se obtiene la frase ingresada por el usuario, se agrega a la lista `frases_ingresadas`, se calcula su longitud y se muestra el resultado correspondiente en la etiqueta `self.resultado`.
+* En el método `validar_longitud`, se obtiene la frase ingresada por el usuario, se agrega a la lista `frases_ingresadas`, se calcula su longitud y se muestra el resultado correspondiente en la etiqueta `self.resultado`.
+* En el método `validar_entrada` se conecta al evento textChanged del QLineEdit. Este método verifica si la entrada ingresada por el usuario contiene números. Si hay números, se limpia el campo de entrada y se muestra un mensaje de error en la etiqueta `self.resultado`.
 
 #### En conclusión, la clase `LongitudFraseApp` hereda de la clase `QMainWindow` de PyQt6 y se encarga de crear y administrar la interfaz gráfica de usuario para el programa de validación de longitud de frases. Además, utiliza una lista (`frases_ingresadas`) para almacenar las frases ingresadas por el usuario durante la ejecución del programa.
 
