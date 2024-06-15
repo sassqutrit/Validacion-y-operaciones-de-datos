@@ -24,7 +24,7 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
       - Se utiliza el casting implícito al comparar la longitud de la cadena con números enteros.
    * Comentarios dentro del archivo explicando el funcionamiento:
       - Se han agregado comentarios en el código explicando el propósito de cada bloque de código.
-### Con estos pasos, el programa utiliza una colección de datos (una lista) para almacenar las frases ingresadas por el usuario..
+#### Con estos pasos, el programa utiliza una colección de datos (una lista) para almacenar las frases ingresadas por el usuario.
 
 ### Explicación del desarrollo del Programa 2. Encuentra el Cuadrante.
    * Uso correcto de las estructuras de control:
