@@ -29,9 +29,9 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
 ### Explicación del uso y funcionamiento de la clase creada:
 * Primeramente, como podemos observar se define una clase llamada `LongitudFraseApp` que hereda de la clase `QMainWindow` proporcionada por el módulo `PyQt6.QtWidgets`. La clase `QMainWindow` es una clase base que proporciona una ventana principal para una aplicación de interfaz gráfica de usuario (GUI) en PyQt6.
 * Cuando se crea una instancia de la clase `LongitudFraseApp`, se llama al método `__init__`, que es el método constructor de la clase. Dentro de este método, se realiza lo siguiente:
-- `super().__init__()`: Se llama al constructor de la clase base (`QMainWindow`) para inicializar los atributos y métodos básicos de la ventana principal.
-- `self.initUI()`: Se llama al método `initUI`, que se encarga de configurar y crear la interfaz de usuario de la aplicación.
-- `self.frases_ingresadas = []`: Se crea una lista vacía llamada `frases_ingresadas`, que se utilizará para almacenar las frases ingresadas por el usuario durante la ejecución del programa.
+  - `super().__init__()`: Se llama al constructor de la clase base (`QMainWindow`) para inicializar los atributos y métodos básicos de la ventana principal.
+  - `self.initUI()`: Se llama al método `initUI`, que se encarga de configurar y crear la interfaz de usuario de la aplicación.
+  - `self.frases_ingresadas = []`: Se crea una lista vacía llamada `frases_ingresadas`, que se utilizará para almacenar las frases ingresadas por el usuario durante la ejecución del programa.
 * Luego, en el método `initUI`, se configura la ventana principal, se crean los widgets (etiquetas, campo de entrada de texto y botón) y se organizan en un layout vertical utilizando la clase `QVBoxLayout`.
 * Finalmente, en el método `validar_longitud`, se obtiene la frase ingresada por el usuario, se agrega a la lista `frases_ingresadas`, se calcula su longitud y se muestra el resultado correspondiente en la etiqueta `self.resultado`.
 
