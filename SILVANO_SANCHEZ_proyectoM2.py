@@ -30,7 +30,9 @@ D. Uso correcto de la sintaxis y características de Python.
 E. Comentarios dentro del archivo explicando el funcionamiento.
 """
 
-# Creación de una clase, pasándole 
+
+# Creación o definición de una clase, que hereda de la clase principal QMainWindow
+# Se utilizan esta clase y funciones para desarrollar una GUI.
 class LongitudFraseApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -46,9 +48,10 @@ class LongitudFraseApp(QMainWindow):
 
         # Creación de los widgets
         layout = QVBoxLayout()
-        self.label = QLabel("Ingrese una frase:")
+        self.label = QLabel("Ingrese una frase (sin números):")
         layout.addWidget(self.label)
         self.lineEdit = QLineEdit()
+        self.lineEdit.textChanged.connect(self.validar_entrada)
         layout.addWidget(self.lineEdit)
         self.button = QPushButton("Validar")
         self.button.clicked.connect(self.validar_longitud)
@@ -60,6 +63,15 @@ class LongitudFraseApp(QMainWindow):
         widget = QWidget()
         widget.setLayout(layout)
         self.setCentralWidget(widget)
+
+    def validar_entrada(self):
+        # Obtener la entrada del usuario
+        entrada = self.lineEdit.text()
+
+        # Verificar si la entrada contiene números
+        if any(char.isdigit() for char in entrada):
+            self.lineEdit.clear()
+            self.resultado.setText("No se permiten números en la entrada.")
 
     def validar_longitud(self):
         # Obtener la frase ingresada por el usuario
@@ -78,6 +90,7 @@ class LongitudFraseApp(QMainWindow):
             self.resultado.setText(f"Hacen falta letras. Solo tiene {longitud} letras.")
         else:
             self.resultado.setText(f"Sobran letras. Tiene {longitud} letras.")
+
 
 if __name__ == "__main__":
     # Creación de la aplicación Qt
