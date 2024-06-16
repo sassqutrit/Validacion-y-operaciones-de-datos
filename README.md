@@ -5,17 +5,24 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
    * Si la palabra tiene menos de 4 caracteres, debe informar cuántos caracteres faltan.
    * Si la palabra tiene más de 8 caracteres, debe informar cuántos caracteres sobran.
    * Si la palabra tiene entre 4 y 8 caracteres, debe informar que la palabra es correcta.
+   * Se utiliza PyQt6 para la interfaz gráfica.
+   * Verifica si la entrada ingresada por el usuario contiene números.
+   * Si hay números, se limpia el campo de entrada y se muestra un mensaje de error en la etiqueta self.resultado.
 
 ## Programa 2. Encuentra el Cuadrante:
    * El programa solicita dos números al usuario que representan las coordenadas X e Y de un punto en un plano cartesiano.
    * Verifica que ninguna de las coordenadas sea 0.
    * Basándose en los valores de X e Y, el programa determina y muestra en cuál de los cuatro cuadrantes se encuentra el punto.
+   * No se permiten ingresar letras, solo números.
+   * El usuario solo podrá ingresar números en los campos de entrada de las coordenadas.
+   * Si el usuario intenta ingresar letras, el campo de entrada se limpiará y se mostrará un mensaje de error.
+   * Se utiliza PyQt6 para la interfaz gráfica y matplotlib para visualizar el punto en el plano cartesiano.
 
 ### Explicación del desarrollo del Programa 1. Longitud de una Frase.
    * Uso correcto de las estructuras de control:
       - Se utiliza la estructura de control `if-elif-else` para validar la longitud de la frase y mostrar el mensaje correspondiente.
    * Uso correcto de variables y colecciones de datos:
-      - Se utiliza la variable `frase` para almacenar la cadena de texto ingresada por el usuario.
+      - Se utiliza la variable `entrada`,`frase`,`longitud` entre otras, para almacenar datos, cadena de textos ingresada por el usuario, etc.
       - Se utiliza la función `len()` para obtener la longitud de la cadena de texto almacenada en `frase`.
       - Se ha creado una lista llamada `frases_ingresadas` dentro de la clase `LongitudFraseApp`.
       - Cada vez que el usuario ingresa una frase y hace clic en el botón "Validar", la frase se agrega a la lista `frases_ingresadas` mediante el método `append()`.
@@ -48,8 +55,12 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
 * Creamos la clase `CuadranteApp` que hereda de `QMainWindow`.
 * En el método `__init__` llamamos al método `initUI` para inicializar la interfaz de usuario.
 * El método `initUI` configura la ventana principal, crea los widgets (etiquetas, campos de entrada de texto y botón), los organiza en un layout vertical y crea un lienzo (`FigureCanvas`) para graficar el punto en el plano cartesiano.
+* Los Métodos: validar_entrada_x y validar_entrada_y se conectan al evento textChanged de los QLineEdit correspondientes. Estos métodos verifican si la entrada ingresada por el usuario contiene letras. Si hay letras, se limpia el campo de entrada y se muestra un mensaje de error en la etiqueta self.resultado.
 * Cuando se hace clic en el botón "Encontrar Cuadrante", se llama al método `encontrar_cuadrante`.
 * El método `encontrar_cuadrante` obtiene las coordenadas ingresadas por el usuario, verifica que ninguna coordenada sea 0, identifica el cuadrante en el que se encuentra el punto según las reglas dadas, muestra el resultado y grafica el punto en el plano cartesiano utilizando matplotlib.
+* El Bloque try-except sirve para verificar que las coordenadas ingresadas sean números válidos. Si no son números válidos, se muestra un mensaje de error en la etiqueta self.resultado.
+* Se verifica que ninguna coordenada sea 0.
+* Se identifica el cuadrante. Se muestra el resultado y se grafica el punto en el plano cartesiano.
 * Finalmente, creamos una instancia de la aplicación Qt, creamos una instancia de la ventana `CuadranteApp` y la mostramos.
 
 ### Detalles de cómo hice el programa:
@@ -66,3 +77,7 @@ El proyecto consta de dos programas que demuestran la comprensión y aplicación
 * **Trabajo individual y colaborativo**: Algunos proyectos han sido individuales, mientras que otros han requerido trabajo colaborativo. Esta combinación me ha permitido desarrollar habilidades tanto para trabajar de manera autónoma como para colaborar en equipo, lo cual es invaluable en el mundo laboral.
 
 #### En general, este bootcamp ha sido una experiencia enriquecedora y desafiante. He adquirido conocimientos sólidos en programación y he podido aplicarlos en proyectos prácticos. Además, he desarrollado habilidades importantes como la resolución de problemas, la integración de herramientas, la documentación efectiva y la capacidad de trabajar tanto de forma individual como en equipo. Estoy emocionado por continuar aprendiendo y enfrentando nuevos desafíos en el futuro.
+
+[![frase.jpg](https://i.postimg.cc/BvFqPS4L/frase.jpg)](https://postimg.cc/Y4pcJw4M)
+
+[![cuadrante.jpg](https://i.postimg.cc/c4WZ2Bsj/cuadrante.jpg)](https://postimg.cc/yWLwS93X)
